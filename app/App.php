@@ -1,5 +1,4 @@
 <?php
-// echo "Salam";
 declare (strict_types = 1);
 
 function getAllFiles(array $files) : array{
@@ -32,18 +31,12 @@ function readAllFiles(array $files, ?callable $callback):array
 function readCurrentFile($file){
     $file = fopen($file, 'r');
     $arr = [];
-    // $line = fgetcsv ($file);
-    // return $line;
+
     while (($line = fgetcsv ($file)) !==false ){
         array_push($arr, $line) ;
     }
     return $arr;
-
-
     fclose($file);
 }
 
-// function test(){
-//     return 'aa';
-// }
 ?>
